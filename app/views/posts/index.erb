@@ -1,0 +1,15 @@
+<h1>Welcome, <%=@user.username%>!</h1>
+
+Latest Posts<br>
+----------------------------------------
+<%Post.all.each do |post|%>
+<br><br>
+  <b><%=post.title%></b>
+<br>
+<i>by <%=post.user.username%></i>
+
+<br>
+  <p><%=post.content%></p>
+----------------------------------------
+
+<%end%>
