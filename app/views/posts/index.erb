@@ -1,15 +1,21 @@
 <h1>Welcome, <%=@user.username%>!</h1>
+<a href='/posts/new'>New Post</a>
+<br><br>
 
-Latest Posts<br>
+<h3>Latest Posts</h3>
 ----------------------------------------
 <%Post.all.each do |post|%>
 <br><br>
   <b><%=post.title%></b>
 <br>
-<i>by <%=post.user.username%></i>
+<i>by <a href='/<%=post.user.slug%>/posts'><%=post.user.username%></a></i>
 
 <br>
   <p><%=post.content%></p>
+<%if post.user == @user%>
+  <a href='/posts/<%=post.id%>/edit'>Edit</a>  <a href='/posts/<%=post.id%>/delete'>Delete</a>
+<%end%>
+<br>
 ----------------------------------------
 
 <%end%>

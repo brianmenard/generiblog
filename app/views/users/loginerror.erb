@@ -1,9 +1,8 @@
 <h1>Log In</h1>
 
-<%if @error%>
-  <%=@error%>
-<%end%>
-
+<span style="color:red">Invalid Credentials</span>
+<br>
+<br>
 <form method='POST' action='/login'>
   <label>Username</label>
   <input type='text' name='username'>
